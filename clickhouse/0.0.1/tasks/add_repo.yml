@@ -1,0 +1,15 @@
+
+- name: add epel
+  yum:
+    name: epel-release
+
+- name: add repo for clickhouse
+  shell: curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh | sudo bash
+  
+- name: install clickhouse
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - clickhouse-server
+    - clickhouse-client

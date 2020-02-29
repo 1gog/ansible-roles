@@ -1,0 +1,6 @@
+---
+# tasks file for clickhouse
+
+- include: add_repo.yml
+- include: active_service.yml
+- include: copy_config.yml
